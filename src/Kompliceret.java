@@ -4,7 +4,7 @@ public class Kompliceret {
 
         MyTimer.start();
 
-        int n = 100000;
+        int n = 80000;
 
         long resultat = 0;
 

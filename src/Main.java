@@ -17,9 +17,12 @@ import java.util.Date;
 * */
 public class Main {
 
-    private static final int N = 700; // Change the value of N for more or less iterations
+    private static final int N = 60000; // Change the value of N for more or less iterations
 
     public static void main(String[] args) {
+
+        SortingAlgorithms sort = new SortingAlgorithms();
+        SearchAlgorithms search = new SearchAlgorithms();
 
         long startTime = MyTimer.currentTimestamp();
 
@@ -27,12 +30,35 @@ public class Main {
         System.out.println("Time is " + date.toString() + " (" + date.getTime() + ")\n");
         System.out.println("Calculation starting.");
 
-        myAlgorithm(); // Replace this with your own algorithm
 
+        myAlgorithm();
+
+        for (int i = 0; i < N; i++){
+        sort.heapSort(100);
+        }
         long endTime = MyTimer.currentTimestamp();
         String resultat = MyTimer.timeElapsed(startTime, endTime) ;
         System.out.println();
         System.out.println(resultat);
+        startTime = MyTimer.currentTimestamp();
+        for (int i = 0; i < N; i++){
+            sort.bubbleSort(100);
+        }
+        endTime = MyTimer.currentTimestamp();
+        resultat = MyTimer.timeElapsed(startTime, endTime) ;
+        System.out.println();
+        System.out.println(resultat);
+        for (int i = 0; i < N; i++){
+            search.findAlle(20, 100,2);
+        }
+        endTime = MyTimer.currentTimestamp();
+        resultat = MyTimer.timeElapsed(startTime, endTime) ;
+        System.out.println();
+        System.out.println(resultat);
+
+        // Replace this with your own algorithm
+
+
     }
 
 
